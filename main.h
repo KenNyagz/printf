@@ -9,6 +9,7 @@
 
 int _printf(const char *format, ...);
 int printdecimal(va_list argslist);
-
+int printchar(va_list argslist);
+int printstring(va_list argslist);
 
 #endif
