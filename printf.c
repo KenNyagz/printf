@@ -17,6 +17,7 @@ va_start(arguments, format);
 
 while (*format != '\0')
 {
+	++count;
 	if (*format == '%')
 	{
 		format++;
@@ -25,30 +26,20 @@ while (*format != '\0')
 		/*
 		*if (*format == 'X' || *format == 'x')
 		*	count += printhex;
-		*if (*format == 's' || *format == 'S')
-		*	count += printstring();
-		*if (*format == 'c')
-		*	count += printchar;
 		*/
-
+		if (*format == 's' || *format == 'S')
+			count += printstring(arguments);
+		if (*format == 'c')
+			count += printchar(arguments);
+		if (*format == '%')
+			write(1, "%", 1);
 	}
 	else
 	write(STDOUT_FILENO, format, 1);
 
 	format++;
-	count++;
 }
 
-
+va_end(arguments);
 return (count);
 }
-
-/*
-*int main()
-*{
-*
-*int r = _printf("me me   meee%d\n", 10);
-*_printf("%d\n", r);
-*return (0);
-*}
-*/
