@@ -13,7 +13,7 @@ int count = 0;
 
 va_list arguments;
 
-va_start (arguments, format);
+va_start(arguments, format);
 
 while (*format != '\0')
 {
@@ -22,13 +22,14 @@ while (*format != '\0')
 		format++;
 		if (*format == 'd')
 			count += printdecimal(arguments);
-		/*if (*format == 'X' || *format == 'x')
-			count += printhex;
-		if (*format == 's' || *format == 'S')
-			count += printstring();
-		if (*format == 'c')
-			count += printchar;*/
-
+		/*
+		*if (*format == 'X' || *format == 'x')
+		*	count += printhex;
+		*if (*format == 's' || *format == 'S')
+		*	count += printstring();
+		*if (*format == 'c')
+		*	count += printchar;
+		*/
 
 	}
 	else
@@ -42,11 +43,12 @@ while (*format != '\0')
 return (count);
 }
 
-
-int main()
-{
-
-int r = _printf("me me   meee%d\n", 10);
-_printf("%d\n", r);
-return (0);
-}
+/*
+*int main()
+*{
+*
+*int r = _printf("me me   meee%d\n", 10);
+*_printf("%d\n", r);
+*return (0);
+*}
+*/

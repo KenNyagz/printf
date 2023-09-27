@@ -1,9 +1,9 @@
 #include "main.h"
 
-/*
-*
-*
-*
+/**
+*printdecimal - prints decimals in the format
+*@argslist: list of arguments
+*Return: Number of digits in number
 */
 
 int printdecimal(va_list argslist)
