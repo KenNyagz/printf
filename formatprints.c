@@ -8,17 +8,32 @@
 
 int printdecimal(va_list argslist)
 {
-int num = 0, count = 0;
+int num = 0, cnt = 0, cntcp = 0, base = 10, i = 0, n = 0;
+int *arr = NULL;
 
 num = va_arg(argslist, int);
-dprintf(STDOUT_FILENO, "%d", num);/*cheating,using func that's not allowed;)*/
+n = num;
 	while (num != 0)
 	{
-		num = num / 10;
-		count++;
+		num = num / base;
+		cnt++;
 	}
-/*write(1, &num, count++);*/
-return (count);
+	cntcp = cnt;
+
+	arr = malloc(cntcp * sizeof(int));
+	for (i = 0; i < cntcp; i++)
+	{
+		arr[i] = n % base;
+		n /= base;
+	}
+
+	for (i = cntcp  - 1; i >= 0; i--)
+	{
+		_putchar(arr[i] + '0');
+	}
+
+	free(arr);
+return (cntcp);
 }
 
 /**

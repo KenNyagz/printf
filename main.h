@@ -6,6 +6,8 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+void _putchar(int);
+int pwr(int num, int exp);
 
 int _printf(const char *format, ...);
 int printdecimal(va_list argslist);
