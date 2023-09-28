@@ -17,7 +17,7 @@ va_start(arguments, format);
 
 while (*format != '\0')
 {
-	++count;
+	/*++count;*/
 	if (*format == '%')
 	{
 		format++;
