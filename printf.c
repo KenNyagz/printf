@@ -21,7 +21,7 @@ while (*format != '\0')
 	if (*format == '%')
 	{
 		format++;
-		if (*format == 'd')
+		if (*format == 'd' || *format == 'i')
 			count += printdecimal(arguments);
 		/*
 		*if (*format == 'X' || *format == 'x')
