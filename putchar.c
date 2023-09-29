@@ -17,7 +17,7 @@ write(1, &c, 1);
 *pwr - raise a number to an exponent
 *@num: the base number
 *@exp: the exponent/power
-*Return: number raised to power exp
+*Return: num raised to power exp
 */
 
 
