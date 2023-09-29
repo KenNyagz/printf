@@ -31,6 +31,8 @@ while (*format != '\0')
 			count += printstring(arguments);
 		if (*format == 'c')
 			count += printchar(arguments);
+		if (*format == 'o' || *format == 'O')
+			count += printoctal(arguments);
 		if (*format == '%')
 			write(1, "%", 1);
 	}

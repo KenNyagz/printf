@@ -57,28 +57,65 @@ unsigned int num = 0, n = 0;
 num = va_arg(argslist, unsigned int);
 n = num;
 
-while (num != 0)
-{
-num = num / base;
-cnt++;
-}
-cntcp = cnt;
+	while (num != 0)
+	{
+		num = num / base;
+		cnt++;
+	}
+	cntcp = cnt;
 
-arr = malloc(cntcp * sizeof(int));
-for (i = 0; i < cntcp; i++)
-{
-arr[i] = n % base;
-n /= base;
+	arr = malloc(cntcp * sizeof(int));
+	for (i = 0; i < cntcp; i++)
+	{
+		arr[i] = n % base;
+		n /= base;
+	}
+
+	for (i = cntcp  - 1; i >= 0; i--)
+	{
+		if (arr[i] > 9)
+			convertHEX(arr[i]);
+		else
+			_putchar(arr[i] + '0');
+	}
+
+	free(arr);
+return (cntcp);
 }
 
-for (i = cntcp  - 1; i >= 0; i--)
-{
-if (arr[i] > 9)
-convertHEX(arr[i]);
-else
-_putchar(arr[i] + '0');
-}
+/**
+*printoctal - prints numbers in Octal representation
+*@argslist: arguments
+*Return: Void
+*/
 
-free(arr);
+int printoctal(va_list argslist)
+{
+int cnt = 0, cntcp = 0, base = 8, i = 0;
+int *arr = NULL;
+unsigned int num = 0, n = 0;
+
+	num = va_arg(argslist, unsigned int);
+	n = num;
+	while (num != 0)
+	{
+		num = num / base;
+		cnt++;
+	}
+	cntcp = cnt;
+
+	arr = malloc(cntcp * sizeof(int));
+	for (i = 0; i < cntcp; i++)
+	{
+		arr[i] = n % base;
+		n /= base;
+	}
+
+	for (i = cntcp  - 1; i >= 0; i--)
+	{
+		_putchar(arr[i] + '0');
+	}
+
+	free(arr);
 return (cntcp);
 }
