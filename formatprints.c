@@ -89,7 +89,7 @@ return (count);
 *Return: Number of digits in number
 */
 
-int printunsigned(va_list argslist)
+int printunsgned(va_list argslist)
 {
 	int cnt = 0, cntcp = 0, base = 10, i = 0;
 	int *arr = NULL;

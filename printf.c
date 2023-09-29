@@ -34,7 +34,7 @@ while (*format != '\0')
 		if (*format == 'o' || *format == 'O')
 			count += printoctal(arguments);
 		if (*format == 'u')
-			count += printunsigned(arguments);
+			count += printunsgned(arguments);
 		if (*format == '%')
 		{
 			count++;
