@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-int count = 0;
+int count = 1;
 
 va_list arguments;
 
