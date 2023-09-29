@@ -96,7 +96,7 @@ int printunsigned(va_list argslist)
 	unsigned int num = 0, n = 0;
 
 	num = va_arg(argslist, unsigned int);
-	if (num < 0)
+	if (num <= 0)
 		num = -num;
 	n = num;
 	while (num != 0)
