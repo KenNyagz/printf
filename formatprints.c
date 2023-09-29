@@ -84,7 +84,7 @@ return (count);
 }
 
 /**
-*printunsigned - prints decimals in the format
+*printunsgned - prints decimals in the format
 *@argslist: list of arguments
 *Return: Number of digits in number
 */
