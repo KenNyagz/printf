@@ -17,16 +17,16 @@ va_start(arguments, format);
 
 while (*format != '\0')
 {
-	/*++count;*/
+	++count;
 	if (*format == '%')
 	{
 		format++;
 		if (*format == 'd' || *format == 'i')
 			count += printdecimal(arguments);
-		/*
-		*if (*format == 'X' || *format == 'x')
-		*	count += printhex;
-		*/
+		if (*format == 'X')
+			count += printHEX(arguments);
+		if (*format == 'x')
+			count += printhex(arguments);
 		if (*format == 's' || *format == 'S')
 			count += printstring(arguments);
 		if (*format == 'c')
