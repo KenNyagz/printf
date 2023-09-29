@@ -99,7 +99,11 @@ int printunsgned(va_list argslist)
 	if (num <= 0)
 	{
 		if (num == 0)
-			return (0);
+		{
+			_putchar(48);
+			cnt++;
+			return (cnt);
+		}
 		num = -num;
 	}
 	n = num;
