@@ -18,6 +18,7 @@ int printstring(va_list argslist);
 int printhex(va_list argslist);
 int printHEX(va_list argslist);
 int printoctal(va_list argslist);
+int printunsigned(va_list argslist);
 
 
 #endif

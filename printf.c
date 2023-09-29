@@ -33,8 +33,13 @@ while (*format != '\0')
 			count += printchar(arguments);
 		if (*format == 'o' || *format == 'O')
 			count += printoctal(arguments);
+		if (*format == 'u')
+			count += printunsigned(arguments);
 		if (*format == '%')
+		{
+			count++;
 			write(1, "%", 1);
+		}
 	}
 	else
 	write(STDOUT_FILENO, format, 1);

@@ -11,8 +11,13 @@ int printdecimal(va_list argslist)
 int num = 0, cnt = 0, cntcp = 0, base = 10, i = 0, n = 0;
 int *arr = NULL;
 
-num = va_arg(argslist, int);
-n = num;
+	num = va_arg(argslist, int);
+	if (num < 0)
+	{
+		num = -num;
+		_putchar('-');
+	}
+	n = num;
 	while (num != 0)
 	{
 		num = num / base;
@@ -76,4 +81,41 @@ while (*str != '\0')
 ++count;
 
 return (count);
+}
+
+/**
+*printunsigned - prints decimals in the format
+*@argslist: list of arguments
+*Return: Number of digits in number
+*/
+
+int printunsigned(va_list argslist)
+{
+	int cnt = 0, cntcp = 0, base = 10, i = 0;
+	int *arr = NULL;
+	unsigned int num = 0, n = 0;
+
+	num = va_arg(argslist, unsigned int);
+	n = num;
+	while (num != 0)
+	{
+		num = num / base;
+		cnt++;
+	}
+	cntcp = cnt;
+
+	arr = malloc(cntcp * sizeof(int));
+	for (i = 0; i < cntcp; i++)
+	{
+		arr[i] = n % base;
+		n /= base;
+	}
+
+	for (i = cntcp  - 1; i >= 0; i--)
+	{
+		_putchar(arr[i] + '0');
+	}
+
+	free(arr);
+return (cntcp);
 }
