@@ -14,6 +14,7 @@ int *arr = NULL;
 	num = va_arg(argslist, int);
 	if (num < 0)
 	{
+		cnt++;
 		num = -num;
 		_putchar('-');
 	}
