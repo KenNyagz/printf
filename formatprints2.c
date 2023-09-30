@@ -130,9 +130,9 @@ int printbinary(va_list argslist)
 {
 int cnt = 0, cntcp = 0, base = 2, i = 0;
 int *arr = NULL;
-int num = 0, n = 0;
+unsigned int num = 0, n = 0;
 
-	num = va_arg(argslist, int);
+	num = va_arg(argslist, unsigned int);
 	n = num;
 
 	while (num != 0)
