@@ -133,7 +133,7 @@ int *arr = NULL;
 int num = 0, n = 0;
 
 	num = va_arg(argslist, int);
-	num = n;
+	n = num;
 
 	while (num != 0)
 	{
