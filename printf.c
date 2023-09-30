@@ -34,6 +34,8 @@ while (*format != '\0')
 			count += printoctal(arguments);
 		if (*format == 'u')
 			count += printunsgned(arguments);
+		if (*format == 'b')
+			count += printbinary(arguments);
 		if (*format == '%')
 		{
 			count++;

@@ -19,6 +19,6 @@ int printhex(va_list argslist);
 int printHEX(va_list argslist);
 int printoctal(va_list argslist);
 int printunsgned(va_list argslist);
-
+int printbinary(va_list argslist);
 
 #endif
